@@ -1,34 +1,6 @@
 package com.example.demo.error;
 
-public class ResourceNotFoundDetails extends ErrorDetail{
-    private String title;
-    private int status;
-    private String details;
-    private long timestamp;
-    private String developerMessage;
-
-    private ResourceNotFoundDetails() {}
-
-    public String getTitle() {
-        return title;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public String getDetails() {
-        return details;
-    }
-
-    public long getTimestamp() {
-        return timestamp;
-    }
-
-    public String getDeveloperMessage() {
-        return developerMessage;
-    }
-
+public class ResourceNotFoundDetails extends ErrorDetails {
     public static final class Builder {
         private String title;
         private int status;
