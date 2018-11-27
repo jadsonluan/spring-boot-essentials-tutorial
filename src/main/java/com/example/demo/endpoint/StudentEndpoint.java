@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
+import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
@@ -47,12 +48,7 @@ public class StudentEndpoint {
 
     @PostMapping
     @Transactional
-    public ResponseEntity<?> save(@RequestBody Student student) {
-        studentDAO.save(student);
-        studentDAO.save(student);
-        if (true)
-            throw new RuntimeException("Test Transaction");
-        studentDAO.save(student);
+    public ResponseEntity<?> save(@Valid @RequestBody Student student) {
         return new ResponseEntity<>(studentDAO.save(student), HttpStatus.CREATED);
     }
 

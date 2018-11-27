@@ -1,6 +1,6 @@
 package com.example.demo.error;
 
-public class ResourceNotFoundDetails {
+public class ResourceNotFoundDetails extends ErrorDetail{
     private String title;
     private int status;
     private String details;
@@ -70,11 +70,11 @@ public class ResourceNotFoundDetails {
 
         public ResourceNotFoundDetails build() {
             ResourceNotFoundDetails resourceNotFoundDetails = new ResourceNotFoundDetails();
-            resourceNotFoundDetails.status = this.status;
-            resourceNotFoundDetails.details = this.details;
-            resourceNotFoundDetails.title = this.title;
-            resourceNotFoundDetails.developerMessage = this.developerMessage;
-            resourceNotFoundDetails.timestamp = this.timestamp;
+            resourceNotFoundDetails.setStatus(this.status);
+            resourceNotFoundDetails.setDetails(this.details);
+            resourceNotFoundDetails.setTitle(this.title);
+            resourceNotFoundDetails.setDeveloperMessage(this.developerMessage);
+            resourceNotFoundDetails.setTimestamp(this.timestamp);
             return resourceNotFoundDetails;
         }
     }
